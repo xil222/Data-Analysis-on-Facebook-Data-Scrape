@@ -29,10 +29,9 @@ def get_data():
         school_data.append(scipy.io.loadmat(fname + str(num))['local_info']) #append the matfile to the array
 
     school_data = np.asarray((school_data)) #turn the array to a np.array
-    print school_data
-    #school_student_flag = np.array([i[:,0] for i in school_data]) #the faculty_student flag is the first column
-    #school_second_major = np.array([i[:,3] for i in school_data]) #second major info is the fourth column
-    #gender = np.array([i[:,1] for i in school_data]) #gender info is on second column
+    school_student_flag = np.array([i[:,0] for i in school_data]) #the faculty_student flag is the first column
+    school_second_major = np.array([i[:,3] for i in school_data]) #second major info is the fourth column
+    gender = np.array([i[:,1] for i in school_data]) #gender info is on second column
     #state = pd.read_excel('State-University.xlsx') #read the state location of each university
 
     #return school_student_flag, school_second_major, gender, state #return all arrays as a tuple
