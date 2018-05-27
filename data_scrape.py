@@ -43,11 +43,16 @@ def find_faculty_student_rate(flags):
     value_counts = [dict(Counter(x).most_common()) for x in flags]
     rates = [float(y[2])/y[1] for y in value_counts]
 
-    fig1 = plt.figure()
-    plt.plot(range(1, 101), rates)
+    fig1,ax1 = plt.subplots()
+    plt.title('Faculty/Student Ratio vs. Rank')
+    plt.scatter(range(1, 101), rates, color='darkred', marker='o', s=16)
+    plt.plot(range(1, 101),rates, color='indianred', linestyle='--', linewidth=1)
     plt.ylabel('Faculty/Student Ratio')
     plt.xlabel('Rank of School')
-    plt.savefig('faculty_student_ratio_vs_rank.png')
+    ax1.spines['right'].set_visible(False)
+    ax1.spines['top'].set_visible(False)
+    plt.tight_layout()
+    plt.savefig('visualizations/faculty_student_ratio_vs_rank.png')
     plt.show()
 
 def universities_in_state(state):
@@ -64,10 +69,11 @@ def universities_in_state(state):
     values = np.array(num_in_top100)
 
     fig2, ax2 = plt.subplots()
-    ax2.pie(values,  labels=labels,
+    ax2.pie(values,  labels=labels, shadow=True,
              startangle=90, rotatelabels=True, pctdistance=0.3)
-    ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.savefig('top100_state.png', dpi=100)
+    plt.tight_layout()
+    plt.title('Number of universities in top 100 by State')
+    plt.savefig('visualizations/top100_state.png', dpi=100)
     plt.show()
 
 def second_major_gender(second_major, gender):
@@ -83,21 +89,41 @@ def second_major_gender(second_major, gender):
     females = np.asarray(females)
 
     males_10 = [dict(Counter(i)) for i in males]
-
     females_10 = [dict(Counter(i)) for i in females]
 
     males_zero = [float(x[0]) for x in males_10]
     females_zero = [float(x[0]) for x in females_10]
-    print females_zero
 
-    males_rate = [sum(males_zero[i:i+10])/sum]
+    males_rate = [sum(males_zero[i:i+10])/sum([sum(x.values()) for x in males_10[i:i+10]])
+                  for i in np.linspace(0,90,10, dtype=int)]
+    females_rate = [sum(females_zero[i:i + 10]) / sum([sum(x.values()) for x in females_10[i:i + 10]]) for i in
+                  np.linspace(0, 90, 10, dtype=int)]
+
+    m = np.subtract(1,males_rate)
+    f = np.subtract(1,females_rate)
+
+    ind = np.arange(10)  # the x locations for the groups
+    width = 0.35  # the width of the bars
+
+    fig3, ax3 = plt.subplots()
+    rects1 = ax3.bar(ind, m, width, color='navy')
+    rects2 = ax3.bar(ind + width, f, width, color='gold')
+    ax3.set_ylabel('Rate of taking minor/second major')
+    ax3.set_xlabel('Rank of School')
+    ax3.set_title('Minor/2nd Major Rate by Gender and Rank')
+    ax3.set_xticks(ind + width / 2)
+    ax3.set_xticklabels(('1-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70',
+                         '71-80', '81-90', '91-100'))
+
+    ax3.legend((rects1[0], rects2[0]), ('Men', 'Women'))
+    plt.savefig('visualizations/2ndmajor by gender and rank.png')
+    plt.show()
+
 def main():
     plt.close('all')
     student_faculty, second_major, gender, state = get_data()
     find_faculty_student_rate(student_faculty)
     universities_in_state(state)
     second_major_gender(second_major, gender)
-
-
 
 main()
