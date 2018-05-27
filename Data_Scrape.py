@@ -24,10 +24,12 @@ def get_data():
     for num,i in enumerate(schools['schools'],1): #iterate through the school names arrays
         fnamestring =  np.array_str(i[0]) #get the school name from the array ex: [u'Penn'] brackets included
         fname = fnamestring[3:-2] #slice the string to just get the only the name of the school
+        if fname == 'UIllinios':
+            fname = 'UIllinois'
         school_data.append(scipy.io.loadmat(fname + str(num))['local_info']) #append the matfile to the array
 
-    #print school_data
-    #school_data = np.asarray((school_data)) #turn the array to a np.array
+    school_data = np.asarray((school_data)) #turn the array to a np.array
+    print school_data
     #school_student_flag = np.array([i[:,0] for i in school_data]) #the faculty_student flag is the first column
     #school_second_major = np.array([i[:,3] for i in school_data]) #second major info is the fourth column
     #gender = np.array([i[:,1] for i in school_data]) #gender info is on second column
