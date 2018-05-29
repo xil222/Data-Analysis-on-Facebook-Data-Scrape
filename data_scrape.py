@@ -21,12 +21,14 @@ def get_data():
         school_data.append(scipy.io.loadmat('data/'+ fname + str(num))['local_info']) #append the matfile to the array
 
     school_data = np.asarray((school_data)) #turn the array to a np.array
+    np.savetxt('test.txt',school_data[1],delimiter='\t')
     school_student_flag = np.array([i[:,0] for i in school_data]) #the faculty_student flag is the first column
     school_second_major = np.array([i[:,3] for i in school_data]) #second major info is the fourth column
+    year = np.array([i[:,-2] for i in school_data])
     gender = np.array([i[:,1] for i in school_data]) #gender info is on second column
     state = pd.read_excel('State-University.xlsx') #read the state location of each university
 
-    return school_student_flag, school_second_major, gender, state #return all arrays as a tuple
+    return school_student_flag, school_second_major, gender, year, state #return all arrays as a tuple
 
 
 def find_faculty_student_rate(flags):
@@ -119,11 +121,36 @@ def second_major_gender(second_major, gender):
     plt.savefig('visualizations/2ndmajor by gender and rank.png')
     plt.show()
 
+def plot_year(year):
+    classes = [dict(Counter(i)) for i in year]
+    grads = [(x[2004]+x[2003]) for x in classes]
+    undergrads = [(x[2005]+x[2006]+x[2007]+x[2008]) for x in classes]
+
+    #rank_by_10 = [(np.sum(undergrads[i*10:i*10+10]),np.sum(grads[i*10:i*10+10])) for i in range(10)]
+    undergrad_values = [np.sum(undergrads[i*10:i*10+10]) for i in range(10)]
+    grad_values = [np.sum(grads[i*10:i*10+10]) for i in range(10)]
+    ratio = [x[0]/float(x[1]) for x in zip(undergrad_values,grad_values)]
+    ind = np.arange(10)  # the x locations for the groups
+    width = 0.7  # the width of the bars
+
+    fig4, ax4 = plt.subplots()
+    ax4.bar(ind, ratio, width, color='darkorange')
+
+    ax4.set_ylabel('# of undergraduates per graduate student')
+    ax4.set_xlabel('Rank of School')
+    ax4.set_title('Ratio of undergraduates/graduate per rank')
+    ax4.set_xticks(ind)
+    ax4.set_xticklabels(('1-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70',
+                         '71-80', '81-90', '91-100'))
+
+    plt.savefig('# of undergrad and grad.png')
+    plt.show()
+
 def main():
     plt.close('all')
-    student_faculty, second_major, gender, state = get_data()
+    student_faculty, second_major, gender, year, state = get_data()
     find_faculty_student_rate(student_faculty)
     universities_in_state(state)
     second_major_gender(second_major, gender)
-
+    plot_year(year)
 main()
