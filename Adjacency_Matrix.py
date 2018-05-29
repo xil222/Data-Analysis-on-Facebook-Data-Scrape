@@ -59,11 +59,24 @@ def main():
     (rows,col,values) = find(school_data['UIllinois20']) # find returns nonzero rows/columns/values
     #print (school_data['UIllinois20'])
     #print rows
-    df = pd.DataFrame({'from': rows, 'to': col})
+    short_Rows = rows[:len(rows)/1000]
+    short_Cols = col[:len(col)/1000]
+    #print len(rows)
+    #print len(short_Rows)
+    
+    #df_Large = pd.DataFrame({'from': rows, 'to':col})
+    df = pd.DataFrame({'from': short_Rows, 'to': short_Cols})
+    #print df
     G=nx.from_pandas_edgelist(df, 'from', 'to')
+    degree_dict = dict(G.degree(G.nodes()))
+    nx.set_node_attributes(G, degree_dict, 'degree')
  
     # Plot the network:
-    nx.draw(G, with_labels=True, node_color='orange', node_size=400, edge_color='black', linewidths=1, font_size=15)
+    fig = plt.figure()
+    #Notes : fruchterman_reingold_layout(G) - layout based on larger hubs near center 
+    nx.draw(G, with_labels=False, node_color='darkviolet', node_size=[size*10 for size in degree_dict.values()], edge_color='white', alpha = 0.5, linewidths=2, font_size=5,pos=nx.fruchterman_reingold_layout(G))
+    #nx.draw(G, with_labels=False, node_size=1500, node_color="skyblue", pos=nx.circular_layout(G))
+    fig.set_facecolor("#00000F")
 
     #for University in school_data: #for each university (key) in school_data
       #  school_Adj = school_data[University]
