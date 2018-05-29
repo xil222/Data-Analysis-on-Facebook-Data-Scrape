@@ -10,8 +10,10 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import pandas as pd
 from scipy.sparse import find
-
 global school_names
+from matplotlib.widgets import RadioButtons
+
+global school_dict
 
 def get_Data():
     '''
@@ -49,37 +51,62 @@ def get_School_Adj_Matrix(school_data, name):
     '''
     return school_data[name]#order of 1-100 but index of 1-99
 
-def create_Network(school_Mat):
-    return
+def store_School_With_Graph(school_data):
+    global school_dict
+    school_dict = {}
+    for name in school_data:
+        (rows,col,values) = find(school_data['UIllinois20']) # find returns nonzero rows/columns/values
+        short_Rows = rows[:len(rows)/1000]
+        short_Cols = col[:len(col)/1000]
+        df = pd.DataFrame({'from': short_Rows, 'to': short_Cols})
+        G=nx.from_pandas_edgelist(df, 'from', 'to')
+        degree_dict = dict(G.degree(G.nodes()))
+        nx.set_node_attributes(G, degree_dict, 'degree')
+        school_dict[name] = G 
+    return school_dict
+
+
 
 
 def main():
-    plt.close('all')
+    global school_dict 
     school_data = get_Data()
-    (rows,col,values) = find(school_data['UIllinois20']) # find returns nonzero rows/columns/values
-    #print (school_data['UIllinois20'])
-    #print rows
-    short_Rows = rows[:len(rows)/1000]
-    short_Cols = col[:len(col)/1000]
-    #print len(rows)
-    #print len(short_Rows)
-    
-    #df_Large = pd.DataFrame({'from': rows, 'to':col})
-    df = pd.DataFrame({'from': short_Rows, 'to': short_Cols})
-    #print df
-    G=nx.from_pandas_edgelist(df, 'from', 'to')
-    degree_dict = dict(G.degree(G.nodes()))
-    nx.set_node_attributes(G, degree_dict, 'degree')
- 
-    # Plot the network:
-    fig = plt.figure()
-    #Notes : fruchterman_reingold_layout(G) - layout based on larger hubs near center 
-    nx.draw(G, with_labels=False, node_color='darkviolet', node_size=[size*10 for size in degree_dict.values()], edge_color='white', alpha = 0.5, linewidths=2, font_size=5,pos=nx.fruchterman_reingold_layout(G))
-    #nx.draw(G, with_labels=False, node_size=1500, node_color="skyblue", pos=nx.circular_layout(G))
-    fig.set_facecolor("#00000F")
+    school_dict = store_School_With_Graph(school_data) #contains graph of each school by name
 
-    #for University in school_data: #for each university (key) in school_data
-      #  school_Adj = school_data[University]
-    
+    assert school_dict.has_key('UIllinois20')
+    G = school_dict['UIllinois20']
+    degree_dict = nx.get_node_attributes(G, 'degree')   
+    nx.draw(G,ax = ax2 ,with_labels=False, node_color='darkviolet', node_size=[size*10 for size in degree_dict.values()], edge_color='red', alpha = 0.5, linewidths=2, font_size=5,pos=nx.fruchterman_reingold_layout(G))
+    return
 
+plt.close('all')    
+fig = plt.figure(figsize=(8,8))
+fig.set_facecolor("#00000F")
+axis = plt.axis(facecolor='springgreen')
+fig.add_axes(axis)
+axes_list = fig.get_axes()
+ax2= axes_list[0]
 main()
+
+
+axcolor = 'skyblue'
+rax = plt.axes([0.05, 0.7, 0.15, 0.15], facecolor=axcolor)
+radio = RadioButtons(rax, ('UIllinois20', 'Penn94'))
+#radio = RadioButtons(rax, tuple(school_dict.keys()))
+plt.sca(ax2)
+plt.show()
+
+def network(label):
+    global school_dict
+    plt.cla()
+    plt.sca(ax2)
+    #axes_list = fig.get_axes()
+    #print axes_list
+    #print fig.axes
+    G = school_dict[label]
+    degree_dict = nx.get_node_attributes(G, 'degree')
+    #Notes : fruchterman_reingold_layout(G) - layout based on larger hubs near center 
+    nx.draw(G, ax=ax2, with_labels=False, node_color='darkviolet', node_size=[size*10 for size in degree_dict.values()], edge_color='red', alpha = 0.5, linewidths=2, font_size=5,pos=nx.fruchterman_reingold_layout(G))
+    fig.set_facecolor("#00000F")
+    plt.show()
+radio.on_clicked(network)
