@@ -143,7 +143,7 @@ def plot_year(year):
     ax4.set_xticklabels(('1-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70',
                          '71-80', '81-90', '91-100'))
 
-    plt.savefig('# of undergrad and grad.png')
+    plt.savefig('visualizations/# of undergrad and grad.png')
     plt.show()
 
 def main():
