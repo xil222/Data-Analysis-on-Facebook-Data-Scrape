@@ -146,6 +146,37 @@ def plot_year(year):
     plt.savefig('visualizations/# of undergrad and grad.png')
     plt.show()
 
+def faculty_gender(student_faculty, gender):
+    male_faculty = []
+    female_faculty = []
+    for i in range(len(student_faculty)):
+        male_faculty.append(np.array([1 for idx in range(len(student_faculty[i]))
+                                      if gender[i][idx]==1 and student_faculty[i][idx]==2]))
+        female_faculty.append(np.array([1 for idx in range(len(student_faculty[i]))
+                                        if gender[i][idx] == 2 and student_faculty[i][idx]==2]))
+
+    male_faculty = [np.sum(male_faculty[i]) for i in range(100)]
+    female_faculty = [np.sum(female_faculty[i]) for i in range(100)]
+
+    male_every10 = [np.sum(male_faculty[i*10:i*10+10]) for i in range(10)]
+    female_every10 = [np.sum(female_faculty[i * 10:i * 10 + 10]) for i in range(10)]
+
+    ind = np.arange(10)  # the x locations for the groups
+    width = 0.35  # the width of the bars
+
+    fig5, ax5 = plt.subplots()
+    rects1 = ax5.bar(ind, male_every10, width, color='c')
+    rects2 = ax5.bar(ind + width, female_every10, width, color='rebeccapurple')
+    ax5.set_ylabel('# of faculty')
+    ax5.set_xlabel('Rank of school')
+    ax5.set_title('Gender of faculty per rank')
+    ax5.set_xticks(ind + width/2)
+    ax5.set_xticklabels(('1-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70',
+                         '71-80', '81-90', '91-100'))
+    ax5.legend((rects1[0],rects2[0]),('Male','Female'))
+    plt.savefig('visualizations/faculty_gender.png')
+    plt.show()
+
 def main():
     plt.close('all')
     student_faculty, second_major, gender, year, state = get_data()
@@ -153,4 +184,6 @@ def main():
     universities_in_state(state)
     second_major_gender(second_major, gender)
     plot_year(year)
+    faculty_gender(student_faculty, gender)
+
 main()
