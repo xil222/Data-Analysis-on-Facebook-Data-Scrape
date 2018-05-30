@@ -65,50 +65,65 @@ def universities_in_state(state):
     :return:None
     '''
     assert isinstance(state, pd.DataFrame)
-    num_in_top100 = state['State'].value_counts()
+    num_in_top100 = state['State'].value_counts()#get back a Series of how many of each value there is
 
-    labels = np.array(num_in_top100.index)
-    values = np.array(num_in_top100)
+    labels = np.array(num_in_top100.index) #the indicies are the state names
+    values = np.array(num_in_top100)#get the values of each state index
 
     fig2, ax2 = plt.subplots()
     ax2.pie(values,  labels=labels, shadow=True,
-             startangle=90, rotatelabels=True, pctdistance=0.3)
+             startangle=90, rotatelabels=True, pctdistance=0.3) #create a pie chart of all the labels and values
     plt.tight_layout()
     plt.title('Number of universities in top 100 by State')
-    plt.savefig('visualizations/top100_state.png', dpi=100)
+    plt.savefig('visualizations/top100_state.png', dpi=100) #save the figure as png
     plt.show()
 
 def second_major_gender(second_major, gender):
+    '''
+    :param second_major: np array of second major info
+    :param gender: np array of gender info
+    :return: None
+    '''
+
+    assert isinstance(second_major,np.ndarray)
+    assert isinstance(gender, np.ndarray)
+    assert all(isinstance(x,np.ndarray) for x in second_major)
+    assert all(isinstance(x,np.ndarray) for x in gender)
+
     males = []
     females = []
-    for i in range(len(second_major)):
+    for i in range(len(second_major)): #split the second major/minor info by gender
         males.append(np.array([second_major[i][idx] for idx in range(len(second_major[i])) if gender[i][idx]==1]))
         females.append(np.array([second_major[i][idx] for idx in range(len(second_major[i])) if gender[i][idx] == 2]))
 
-        #male_rate[i] = len(np.nonzero(males)[0])/float(len(males))
-        #female_rate[i] = len(np.nonzero(females)[0]) / float(len(females))
+    #convert lists to arrays
     males = np.asarray(males)
     females = np.asarray(females)
 
+    #get how many times each value occurs in the arrays
     males_10 = [dict(Counter(i)) for i in males]
     females_10 = [dict(Counter(i)) for i in females]
 
+    #get the number of people who don't have second major/minor
     males_zero = [float(x[0]) for x in males_10]
     females_zero = [float(x[0]) for x in females_10]
 
+    #group the arrays by each 10 and get how many people didn't have a second major/minor
     males_rate = [sum(males_zero[i:i+10])/sum([sum(x.values()) for x in males_10[i:i+10]])
                   for i in np.linspace(0,90,10, dtype=int)]
     females_rate = [sum(females_zero[i:i + 10]) / sum([sum(x.values()) for x in females_10[i:i + 10]]) for i in
                   np.linspace(0, 90, 10, dtype=int)]
 
+    #get the number of people who DID have a second major by taking its complement
     m = np.subtract(1,males_rate)
     f = np.subtract(1,females_rate)
+
 
     ind = np.arange(10)  # the x locations for the groups
     width = 0.35  # the width of the bars
 
     fig3, ax3 = plt.subplots()
-    rects1 = ax3.bar(ind, m, width, color='navy')
+    rects1 = ax3.bar(ind, m, width, color='navy') #bar chart with 2 rectangles for each x tick
     rects2 = ax3.bar(ind + width, f, width, color='gold')
     ax3.set_ylabel('Rate of taking minor/second major')
     ax3.set_xlabel('Rank of School')
@@ -118,22 +133,30 @@ def second_major_gender(second_major, gender):
                          '71-80', '81-90', '91-100'))
 
     ax3.legend((rects1[0], rects2[0]), ('Men', 'Women'))
-    plt.savefig('visualizations/2ndmajor by gender and rank.png')
+    plt.savefig('visualizations/2ndmajor by gender and rank.png') #save figure as png
     plt.show()
 
 def plot_year(year):
-    classes = [dict(Counter(i)) for i in year]
-    grads = [(x[2004]+x[2003]) for x in classes]
-    undergrads = [(x[2005]+x[2006]+x[2007]+x[2008]) for x in classes]
+    '''
+    Creates a bar chart with the number of undergraduates per gradutes organized by every 10 ranks
+    :param year: 2d np array with graduating year of people
+    :return: None
+    '''
+    assert isinstance(year,np.ndarray)
 
-    #rank_by_10 = [(np.sum(undergrads[i*10:i*10+10]),np.sum(grads[i*10:i*10+10])) for i in range(10)]
-    undergrad_values = [np.sum(undergrads[i*10:i*10+10]) for i in range(10)]
-    grad_values = [np.sum(grads[i*10:i*10+10]) for i in range(10)]
-    ratio = [x[0]/float(x[1]) for x in zip(undergrad_values,grad_values)]
+    classes = [dict(Counter(i)) for i in year] #get the number occurences for each value in dict form
+    grads = [(x[2004]+x[2003]) for x in classes] #since the data was taken in 2005, grads graduated in 2004 and 2003
+    undergrads = [(x[2005]+x[2006]+x[2007]+x[2008]) for x in classes] #undergrads graduate 2005-2009
+
+    undergrad_values = [np.sum(undergrads[i*10:i*10+10]) for i in range(10)] #lump up the schools by every 10 ranks
+    grad_values = [np.sum(grads[i*10:i*10+10]) for i in range(10)] #same for grads
+
+    ratio = [x[0]/float(x[1]) for x in zip(undergrad_values,grad_values)]#zip the undergrad and grad together and divide
+
     ind = np.arange(10)  # the x locations for the groups
     width = 0.7  # the width of the bars
 
-    fig4, ax4 = plt.subplots()
+    fig4, ax4 = plt.subplots() #get bar chart of undergraduate/graduate for every 10 ranks
     ax4.bar(ind, ratio, width, color='darkorange')
 
     ax4.set_ylabel('# of undergraduates per graduate student')
@@ -147,24 +170,34 @@ def plot_year(year):
     plt.show()
 
 def faculty_gender(student_faculty, gender):
+    '''
+    Creates a bar chart ratio male and female vs rank of the school
+    :param student_faculty: 100 x m students numpy array with student_faculty info
+    :param gender: 100 x m numpy array with gender info
+    :return:None
+    '''
+
+    assert isinstance(student_faculty, np.ndarray)
+    assert isinstance(gender, np.ndarray)
     male_faculty = []
     female_faculty = []
-    for i in range(len(student_faculty)):
+    for i in range(len(student_faculty)): #creates a 2d matrix with the size of each array representing the number of people
+                                          #specified by array name
         male_faculty.append(np.array([1 for idx in range(len(student_faculty[i]))
                                       if gender[i][idx]==1 and student_faculty[i][idx]==2]))
         female_faculty.append(np.array([1 for idx in range(len(student_faculty[i]))
                                         if gender[i][idx] == 2 and student_faculty[i][idx]==2]))
 
-    male_faculty = [np.sum(male_faculty[i]) for i in range(100)]
-    female_faculty = [np.sum(female_faculty[i]) for i in range(100)]
+    male_faculty = [np.sum(male_faculty[i]) for i in range(100)] #get number of male faculty for each school
+    female_faculty = [np.sum(female_faculty[i]) for i in range(100)] #get number of female faculty for each school
 
-    male_every10 = [np.sum(male_faculty[i*10:i*10+10]) for i in range(10)]
+    male_every10 = [np.sum(male_faculty[i*10:i*10+10]) for i in range(10)] #lump up by 10
     female_every10 = [np.sum(female_faculty[i * 10:i * 10 + 10]) for i in range(10)]
 
     ind = np.arange(10)  # the x locations for the groups
     width = 0.35  # the width of the bars
 
-    fig5, ax5 = plt.subplots()
+    fig5, ax5 = plt.subplots() #create the bar chart
     rects1 = ax5.bar(ind, male_every10, width, color='c')
     rects2 = ax5.bar(ind + width, female_every10, width, color='rebeccapurple')
     ax5.set_ylabel('# of faculty')
@@ -178,12 +211,16 @@ def faculty_gender(student_faculty, gender):
     plt.show()
 
 def main():
-    plt.close('all')
-    student_faculty, second_major, gender, year, state = get_data()
-    find_faculty_student_rate(student_faculty)
-    universities_in_state(state)
-    second_major_gender(second_major, gender)
-    plot_year(year)
-    faculty_gender(student_faculty, gender)
+    '''
+    Main function which calls all the helper functions to plot the data
+    :return: None
+    '''
+    plt.close('all') #close all the previous figures
+    student_faculty, second_major, gender, year, state = get_data() #get all needed data from mat files
+    find_faculty_student_rate(student_faculty) #plots faculty/student ratio vs rank of school
+    universities_in_state(state)#pie chart of which state has more universities in top 100
+    second_major_gender(second_major, gender)#compares secmond major/minor vs gender
+    plot_year(year)#plots undergraduate/graduate ratio vs the rank of school
+    faculty_gender(student_faculty, gender)#bar chart of how many male and female faculty vs rank
 
 main()
