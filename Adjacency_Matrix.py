@@ -54,7 +54,7 @@ def get_Data():
     for num,i in enumerate(schools['schools'],1): #iterate through the school names arrays
         fnamestring =  np.array_str(i[0]) #get the school name from the array ex: [u'Penn'] brackets included
         fname = fnamestring[3:-2] #slice the string to just get the only the name of the school
-        school_data[fname + str(num)]=(scipy.io.loadmat(fname + str(num))['A']) #append the matfile to the array
+        school_data['data'+ fname + str(num)]=(scipy.io.loadmat(fname + str(num))['A']) #append the matfile to the array
     return school_data
 
 
