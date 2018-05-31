@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f668f36-7288-4d2d-9e08-7ecd26eaeced" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/American75.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Amherst41.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auburn71.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC17.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BU10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baylor93.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Berkeley13.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bingham82.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bowdoin47.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brandeis99.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brown11.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bucknell39.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cal65.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Caltech36.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carnegie49.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Colgate88.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Columbia2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cornell5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dartmouth6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Duke14.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Emory27.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSU53.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GWU54.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Georgetown15.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hamilton46.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Harvard1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Haverford76.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Howard90.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Indiana69.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JMU79.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Johns Hopkins55.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehigh96.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MIT8.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSU24.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MU78.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maine59.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maryland58.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mich67.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Michigan23.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Middlebury45.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mississippi66.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NYU9.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Northeastern19.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Northwestern25.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notre Dame57.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Oberlin44.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Oklahoma97.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Penn94.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pepperdine86.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Princeton12.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reed98.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rice31.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rochester38.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rutgers89.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Santa74.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simmons81.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smith60.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stanford3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Swarthmore42.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Syracuse56.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temple83.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tennessee95.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Texas80.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Texas84.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trinity100.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tufts18.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tulane29.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UC33.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UC61.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UC64.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UCF52.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UCLA26.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UCSB37.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UCSC68.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UCSD34.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UChicago30.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UConn91.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UF21.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGA50.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UIllinois20.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UMass92.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UNC28.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UPenn7.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USC35.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USF51.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USFCA72.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UVA16.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vanderbilt48.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vassar85.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vermont70.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Villanova62.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Virginia63.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wake73.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WashU32.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wellesley22.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wesleyan43.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William77.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Williams40.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wisconsin87.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yale4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_scrape.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Data_Analysis_on_Facebook_Data_Scrape$data_scrape.coverage" NAME="data_scrape Coverage Results" MODIFIED="1527396355222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="data_scrape.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_scrape.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="55" column="14" lean-forward="true" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/data_scrape.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="25" />
+    <option name="y" value="-20" />
+    <option name="width" value="1750" />
+    <option name="height" value="970" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="data_scrape" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Data-Analysis-on-Facebook-Data-Scrape" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_scrape.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.data_scrape" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f668f36-7288-4d2d-9e08-7ecd26eaeced" name="Default" comment="" />
+      <created>1526842202694</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1526842202694</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32968536" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32968536" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.3294271" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/data_scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="45" lean-forward="true" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/scipy/io/matlab/mio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/pandas/io/excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="393" selection-start-line="393" selection-end-line="393" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="55" column="14" lean-forward="true" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
